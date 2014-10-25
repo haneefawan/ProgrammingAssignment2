@@ -1,7 +1,7 @@
-## Put comments here that give an overall description of what your
-## functions do
-
-## Write a short comment describing this function
+## creates a special "matrix" object that can cache its inverse
+## set the value of the vector
+## get the value of the vector
+## square matrix is computed using solve function
 
 makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
@@ -10,7 +10,7 @@ makeCacheMatrix <- function(x = matrix()) {
     m <<- NULL
   }
   get<-function() x
-  setmatrix <- function(solve) m<<- solve
+  setmatrix <- function(solve) m <<- solve
   getmatrix <- function() m
   list(set = set, get = get,
        setmatrix = setmatrix,
@@ -19,10 +19,10 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 
-## Write a short comment describing this function
+## This function computes the inverse of the special "matrix" returned by makeCacheMatrix
 
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+        ## Retrieves the inverse from cache
   m <- x$getmatrix()
   if(!is.null(m)){
     return(m)
